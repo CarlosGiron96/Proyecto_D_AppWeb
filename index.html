@@ -3,85 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comercializadora CoCoffe</title>
+    <title>Comercializadora Cocoffe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cafe-oscuro: #4a2c11;
+            --cafe-claro: #8c6239;
+            --crema: #f7f5f0;
+            --acento: #d4a373;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--crema);
+            color: #333;
+        }
+
+        /* Tipografías y Efectos */
+        header {
+            background: linear-gradient(rgba(74, 44, 17, 0.85), rgba(74, 44, 17, 0.95)), 
+                        url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop&q=60') no-gradient;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .navbar {
+            background-color: var(--cafe-oscuro) !important;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--acento) !important;
+        }
+
+        /* Tarjetas de Productos */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(74, 44, 17, 0.2);
+        }
+
+        .btn-custom {
+            background-color: var(--cafe-claro);
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--cafe-oscuro);
+            color: white;
+        }
+
+        /* Aside Estilizado */
+        aside {
+            background-color: #fff;
+            border-left: 5px solid var(--acento);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: var(--cafe-oscuro);
+            color: #dcdcdc;
+        }
+
+        /* Media Query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 10px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            aside {
+                border-left: none;
+                border-top: 5px solid var(--acento);
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Soluciones en Arquitectura de Bases de Datos</h1>
+    <header class="text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Cocoffe</h1>
+            <p class="lead text-white-50">Comercializadora Nacional de Café Artesanal con Alta Tecnología de Distribución</p>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#quienes-somos">Quiénes Somos</a></li>
-            <li><a href="#servicios">Servicios o Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">☕ Gourmet SGBD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-side navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios o Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-
-        <section id="inicio">
-            <h2>Inicio: Tradición Cafetalera con Infraestructura Moderna</h2>
-            <p>
-                Bienvenidos a nuestra comercializadora. Nos dedicamos a llevar el mejor café artesanal desde las fincas directamente a su taza. Al igual que en los Sistemas de Gestión de Bases de Datos (SGBD) modernos, donde la arquitectura de tres niveles de <strong>ANSI/SPARC</strong> garantiza que las operaciones fluyan sin interrupciones, nuestra empresa utiliza este estándar tecnológico para asegurar que el inventario, la seguridad en las compras y la distribución global de nuestro grano se organicen con la máxima excelencia, flexibilidad y eficiencia del mercado.
-            </p>
-        </section>
-
-        <hr>
-
-        <section id="quienes-somos">
-            <h2>Quiénes Somos</h2>
-            <p>
-                Somos una comercializadora de café artesanal comprometida con la innovación en la cadena de suministro. Inspirados en los principios de abstracción de la arquitectura ANSI/SPARC, entendemos que un negocio moderno no puede depender de sistemas rígidos donde el cambio de un formato rompa toda la operación. Por ello, implementamos una plataforma tecnológica avanzada para nuestros productores y clientes. Separamos las responsabilidades en capas: nuestros caficultores se enfocan en el origen y empaque, mientras que nuestros desarrolladores gestionan el Nivel Externo con interfaces intuitivas y personalizadas para los compradores. Al centralizar la lógica en el Nivel Conceptual y automatizar los detalles de hardware en el Nivel Interno, garantizamos un sistema de comercio electrónico robusto, capaz de procesar pedidos masivos con total estabilidad y con un control de datos que protege la identidad de cada eslabón de nuestra red de comercio justo.
-            </p>
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&auto=format&fit=crop&q=60" alt="Granos de café artesanal tostados y listos para distribución" width="500">
-        </section>
-
-        <hr>
-
-        <section id="servicios">
-            <h2>Nuestros Servicios o Productos</h2>
-            <p>Unimos la calidad del café con los tres pilares fundamentales de la arquitectura tecnológica:</p>
-            <ul>
-                <li><strong>Variedades de Café de Especialidad (Nivel Externo / Seguridad):</strong> Catálogo adaptado según el rol del usuario. Los clientes finales acceden a una vista personalizada de compras, mientras que los distribuidores mayoristas ven tarifas exclusivas mediante un control de accesos granular que aísla los datos financieros sensibles.</li>
-                <li><strong>Logística e Independencia Lógica de Datos:</strong> Capacidad de modificar nuestro catálogo conceptual de granos (origen, niveles de tueste y existencias) en la base de datos central sin necesidad de lanzar actualizaciones complejas o interrumpir la navegación en nuestra aplicación móvil.</li>
-                <li><strong>Distribución Automatizada e Independencia Física:</strong> Gestión tecnológica del inventario. Si migramos nuestros servidores de control de existencias a la nube (AWS RDS o Azure SQL) o actualizamos el hardware de almacenamiento, la experiencia de compra en línea permanece intacta para el consumidor.</li>
-                <li><strong>Sistemas Integrados para Cafeterías:</strong> Conexión directa mediante API modernas con sistemas ERP y puntos de venta (POS), abstrayendo la complejidad técnica de las consultas para facilitar las órdenes automatizadas de café.</li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Deseas incorporar nuestro café artesanal o conocer más sobre nuestra plataforma de distribución? Contáctanos:</p>
-            <p><strong>Correo electrónico:</strong> bryancueva1096@gmail.com</p>
-            <p><strong>Teléfono:</strong> +593 98 698 0992</p>
-            <p><strong>Dirección:</strong> El Oro - Santa Rosa - Mercado Central</p>
-            <p><strong>Redes Sociales:</strong></p>
-            <ul>
-                <li><a href="https://linkedin.com" target="_blank">LinkedIn - Conexión Corporativa</a></li>
-                <li><a href="https://github.com" target="_blank">GitHub - Repositorio del Sistema de Ventas</a></li>
-            </ul>
+    <main class="container my-5">
+        <div class="row">
             
-            <br>
-            <h3>Video: Del Campo a la Taza mediante Procesos Tecnológicos</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/shorts/uPJkaVf3lYY" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </section>
+            <div class="col-lg-8">
+                
+                <section id="inicio" class="mb-5 p-4 bg-white rounded shadow-sm">
+                    <h2 class="text-secondary fw-bold mb-3">Inicio: Tradición Cafetalera e Infraestructura Moderna</h2>
+                    <p class="lead">
+                        Bienvenidos a nuestra comercializadora. Nos dedicamos a llevar el mejor café artesanal desde las fincas directamente a su taza. 
+                    </p>
+                    <p>
+                        Descubre la riqueza del café ecuatoriano, desde la excelencia de altura de Loja hasta la fuerza amazónica de Zamora Chinchipe. Unimos la tradición cafetalera de nuestras mejores tierras con la máxima innovación en distribución tecnológica. Llevamos un grano excepcional directamente a tu negocio o taza bajo procesos de vanguardia, garantizándote frescura, comercio justo y calidad en cada sorbo. El aroma de nuestra tierra impulsado por el futuro.
+                    </p>
+                    <a href="#servicios" class="btn btn-custom btn-lg mt-2">Explorar Catálogo</a>
+                </section>
 
+                <section id="quienes-somos" class="mb-5 p-4 bg-white rounded shadow-sm">
+                    <h2 class="text-secondary fw-bold mb-3">Quiénes Somos</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <p>
+                                Somos una comercializadora de café artesanal comprometida con la innovación en la cadena de suministro y la valorización de la rica tradición cafetalera del Ecuador, un país con condiciones geográficas privilegiadas que permiten producir cafés de especialidad únicos en el mundo tanto de la variedad Arábiga como Robusta. Inspirados en los principios de abstracción de la arquitectura ANSI/SPARC, entendemos que un negocio moderno no puede depender de sistemas rígidos donde el cambio de un formato rompa toda la operación. Por ello, implementamos una plataforma tecnológica avanzada para conectar de manera directa y eficiente a los productores de las mayores provincias cafetaleras del país con el consumidor final.
+                            </p>
+                            <p>
+                                Nuestra red abarca zonas emblemáticas como <strong>Loja</strong>, famosa por sus cafés Arábigos lavados de altura con perfiles de taza excepcionales; <strong>Manabí</strong>, líder histórico en producción; <strong>Zaruma en El Oro</strong>, reconocida por su tradición y balance en taza; así como las estribaciones de la cordillera en <strong>Pichincha</strong> (zona de Intag y noroccidente) y las provincias amazónicas como <strong>Zamora Chinchipe</strong> y <strong>Orellana</strong>, esenciales en el cultivo de variedades Robustas amazónicas de gran cuerpo.
+                            </p>
+                            <p>
+                                Separamos las responsabilidades de este ecosistema en capas independientes: nuestros caficultores se enfocan en los procesos agrícolas en origen, cosecha y empaque, mientras que nuestros desarrolladores gestionan el Nivel Externo con interfaces intuitivas y personalizadas para los compradores nacionales e internacionales. Al centralizar la lógica de la comercialización en el Nivel Conceptual y automatizar los detalles de hardware e inventario en el Nivel Interno, garantizamos un sistema de comercio electrónico robusto, capaz de procesar pedidos masivos con total estabilidad y con un control de datos que protege el valor justo y la identidad de cada eslabón de nuestra red de comercio justo ecuatoriano.
+                            </p>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&auto=format&fit=crop&q=60" alt="Granos de café artesanal tostados" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="servicios" class="mb-5">
+                    <h2 class="text-secondary fw-bold mb-4">Nuestros Servicios o Productos</h2>
+                    <p class="mb-4">Unimos la calidad del grano con los pilares fundamentales de la arquitectura tecnológica:</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card h-100 p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark">☕ Variedades Especiales (Nivel Externo)</h5>
+                                    <p class="card-text text-muted">Catálogo adaptado según el rol del usuario. Los clientes finales acceden a una vista personalizada de compras, mientras que los distribuidores mayoristas ven tarifas exclusivas mediante un control de accesos granular que aísla los datos financieros sensibles[cite: 37, 39].</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100 p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark">🔄 Logística Dinámica</h5>
+                                    <p class="card-text text-muted">Capacidad de modificar nuestro catálogo conceptual de granos origen, niveles de tueste y existencias en la base de datos central sin necesidad de lanzar actualizaciones complejas o interrumpir la navegación en nuestra aplicación móvil[cite: 42, 44].</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100 p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark">☁️ Distribución Cloud </h5>
+                                    <p class="card-text text-muted">Gestión de stock robusta. Si migramos nuestros servidores de inventario a la nube o actualizamos el hardware de almacenamiento, la experiencia de compra en línea permanece intacta para el consumidor[cite: 45, 46, 47].</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100 p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark">🔌 Integración API para Cafeterías</h5>
+                                    <p class="card-text text-muted">Conexión directa mediante API modernas con sistemas ERP y puntos de venta (POS) externos, facilitando las órdenes automatizadas de reposición de café de manera transparente[cite: 48, 50].</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contacto" class="mb-5 p-4 bg-white rounded shadow-sm">
+                    <h2 class="text-secondary fw-bold mb-4">Formulario de Contacto</h2>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre de Contacto</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Correo Electronico</label>
+                            <input type="email" class="form-control" id="email" placeholder="nombre@empresa.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="asunto" placeholder="Ej. Solicitud de Distribución Mayorista" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="mensaje" class="form-label">Comentarios</label>
+                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escriba sus dudas aquí..." required></textarea>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-custom px-4">Enviar</button>
+                        </div>
+                    </form>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <h5>Datos de Contacto Directo:</h5>
+                        <p class="mb-1"><strong>Correo:</strong> bryancueva1096@gmail.com</p>
+                        <p class="mb-1"><strong>Teléfono:</strong> +593 98 698 0992</p>
+                        <p class="mb-3"><strong>Dirección:</strong> Vía la Avanzada, ciudadela Miraflores</p>
+                        
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="https://linkedin.com" target="_blank" class="btn btn-outline-primary btn-sm">LinkedIn Corporativo</a>
+                            <a href="https://github.com" target="_blank" class="btn btn-outline-dark btn-sm">GitHub Sistema Ventas</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3 text-muted">Video Explicativo del Proceso Tecnológico</h5>
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/watch?v=RV0ZyR1LKUQ" title="Tostando Café de Especialidad Paso a Paso" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="col-lg-4">
+                <aside class="p-4 shadow-sm bg-white mb-4">
+                    <h4 class="text-dark fw-bold mb-3">Información Relevante</h4>
+                    <p class="text-muted"><strong>Horarios de Atención:</strong><br> Lunes a Sábado: 07:00 a 16:00.</p>
+                    <hr>
+                    <div class="p-3 bg-light border-start border-warning border-3 rounded">
+                        <h6 class="fw-bold text-warning-emphasis">☕ ¡Promoción de Temporada!</h6>
+                        <p class="small mb-0 text-dark">En la compra de tu primer lote corporativo de Café Premium, te ofrecemos un diagnóstico gratuito del nivel de integración API para los sistemas de tu negocio[cite: 24].</p>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
     </main>
 
-    <aside>
-        <h3>Información Relevante</h3>
-        <p><strong>Horarios de Atención:</strong> Lunes a Viernes de 08:00 a 17:00.</p>
-        <p><strong>¡Promoción Mensual!</strong> Evaluación gratuita del nivel de independencia lógica y física de sus sistemas actuales durante este mes.</p>
-    </aside>
-
-    <footer>
-        <p>Estudiante: [Tu Nombre Completo] | Asignatura: Gestión de Bases de Datos | Año: 2026</p>
+    <footer class="text-center p-4">
+        <div class="container">
+            <p class="mb-0">Estudiante: Jose Juca; Ana Villon; Carlos Giron | Asignatura: Desarrrollo Web | Año: 2026</p>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
