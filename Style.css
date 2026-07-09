@@ -1,0 +1,80 @@
+:root {
+    --cafe-oscuro: #4a2c11;
+    --cafe-claro: #8c6239;
+    --crema: #f7f5f0;
+    --acento: #d4a373;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--crema);
+    color: #333;
+}
+
+header {
+    background: linear-gradient(rgba(74, 44, 17, 0.85), rgba(74, 44, 17, 0.95)), 
+                url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop&q=60');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.navbar {
+    background-color: var(--cafe-oscuro) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: var(--acento) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+}
+
+.max-img-height {
+    max-height: 220px; 
+    width: 100%; 
+    object-fit: cover;
+}
+
+aside {
+    background-color: #fff;
+    border-left: 5px solid var(--acento);
+    border-radius: 4px;
+}
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: #dcdcdc;
+}
+
+/* Animación de entrada para nuevos nodos agregados */
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MEDIA QUERIES: Adaptabilidad en Celulares y Tablets */
+@media (max-width: 768px) {
+    header { padding: 35px 10px; }
+    header h1 { font-size: 1.8rem; }
+    aside {
+        border-left: none;
+        border-top: 5px solid var(--acento);
+        margin-top: 20px;
+    }
+}
