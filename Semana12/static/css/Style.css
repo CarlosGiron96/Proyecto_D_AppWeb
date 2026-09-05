@@ -1,0 +1,58 @@
+/* Paleta de colores corporativa basada en café artesanal */
+:root {
+    --cafe-oscuro: #3d2314;
+    --crema-fondo: #fbf9f6;
+    --texto-suave: #5c5552;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--crema-fondo);
+    color: #2b2b2b;
+}
+
+header {
+    background: linear-gradient(rgba(44, 24, 14, 0.88), rgba(26, 14, 8, 0.96)), 
+                url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop&q=60');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid #198754;
+}
+
+.max-img-height {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.extra-small {
+    font-size: 0.78rem;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* Animaciones de suavizado para inyección de nodos dinámicos */
+.animate-fade-in {
+    animation: slideIn 0.35s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fijación inteligente de barra lateral en pantallas grandes */
+@media (min-width: 992px) {
+    .sticky-aside {
+        position: sticky;
+        top: 90px;
+    }
+}
+
+/* Media Queries para adaptabilidad responsiva integral */
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .card { padding: 1.25rem !important; }
+}
