@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">
+                        {% if modo == 'editar' %}
+                            Editar Producto #{{ id_producto }}
+                        {% else %}
+                            Registrar Nuevo Café Artesanal
+                        {% endif %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="mb-3">
+                            {{ form.nombre.label(class="form-label") }}
+                            {{ form.nombre(class="form-control") }}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.precio.label(class="form-label") }}
+                                {{ form.precio(class="form-control") }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.stock.label(class="form-label") }}
+                                {{ form.stock(class="form-control") }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            {% if form.origen is defined %}
+                                {{ form.origen.label(class="form-label") }}
+                                {{ form.origen(class="form-control") }}
+                            {% else %}
+                                {{ form.categoria.label(class="form-label") }}
+                                {{ form.categoria(class="form-control") }}
+                            {% endif %}
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{{ url_for('productos') }}" class="btn btn-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-warning fw-bold text-dark">
+                                {% if modo == 'editar' %}Guardar Cambios{% else %}Registrar Café{% endif %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
