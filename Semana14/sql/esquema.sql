@@ -42,11 +42,3 @@ CREATE TABLE IF NOT EXISTS facturas (
 INSERT INTO proveedores (nombre, telefono, correo) 
 VALUES ('Asociación de Caficultores de Loja', '0991234567', 'contacto@cafeloja.ec')
 ON DUPLICATE KEY UPDATE id_proveedor=id_proveedor;
-
--- Tabla de Usuarios para Autenticación
-CREATE TABLE IF NOT EXISTS usuarios (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    nombre VARCHAR(100) NOT NULL
-);
